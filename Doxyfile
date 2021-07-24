@@ -280,6 +280,7 @@ ALIASES += "failure=<b style=\"color:red\">On failure</b>"
 ALIASES += "p{1}=<span class=\"params\"><span class=\"paramname\">\1</span></span>"
 ALIASES += "usage{1}=@par Usage^^ @cc{\1}"
 ALIASES += "licence{1}=@par Licence^^ @v{\1}"
+ALIASES += "expansion{1}=@par Expansion^^ @cc{\1}"
 
 
 # Set the OPTIMIZE_OUTPUT_FOR_C tag to YES if your project consists of C sources
