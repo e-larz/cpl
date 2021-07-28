@@ -17,23 +17,15 @@
  * }
  */
 /*==============================================================================
-    INCLUDE
+    GUARD
 ==============================================================================*/
-// The API to test
-#include "test_cpl_arg.h"
-#include "test_cpl_concat.h"
-#include "test_cpl_logic.h"
-// C Standard Library
-#include <stdio.h>  // printf()
-#include <stdlib.h> // EXIT_SUCCESS
+#ifndef TEST_CPL_LOGIC_H_20210727192239
+#define TEST_CPL_LOGIC_H_20210727192239
 /*==============================================================================
-    MAIN
+    PUBLIC FUNCTION
 ==============================================================================*/
-int main(void)
-{
-    TEST_cpl_arg();
-    TEST_cpl_logic();
-    TEST_cpl_concat();
-    printf("TEST: OK!\n");
-    return EXIT_SUCCESS;
-}
+void TEST_cpl_logic(void);
+/*==============================================================================
+    GUARD
+==============================================================================*/
+#endif // TEST_CPL_LOGIC_H_20210727192239
