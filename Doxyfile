@@ -271,7 +271,11 @@ TAB_SIZE               = 4
 
 ALIASES  = "cast=\xrefitem cast \"Cast\" \"Cast list\""
 ALIASES += "fixme=\xrefitem fixme \"Fix me\" \"Fix me list\""
+ALIASES += "cc=@code{.c}"
+ALIASES += "ecc=@endcode"
 ALIASES += "cc{1}=@code{.c}\1@endcode"
+ALIASES += "v=@code{.unparsed}"
+ALIASES += "ev=@endcode"
 ALIASES += "v{1}=@code{.unparsed}\1@endcode"
 ALIASES += "C17=https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf"
 ALIASES += "C17{2}=[C17 \1](@C17\2)"
@@ -280,7 +284,7 @@ ALIASES += "failure=<b style=\"color:red\">On failure</b>"
 ALIASES += "p{1}=<span class=\"params\"><span class=\"paramname\">\1</span></span>"
 ALIASES += "usage{1}=@par Usage^^ @cc{\1}"
 ALIASES += "licence{1}=@par Licence^^ @v{\1}"
-ALIASES += "expansion{1}=@par Expansion^^ @cc{\1}"
+ALIASES += "expansion{1}=@par Expansion^^ `=>` means \"expands to\"^^ @cc{\1}"
 
 
 # Set the OPTIMIZE_OUTPUT_FOR_C tag to YES if your project consists of C sources
@@ -980,8 +984,10 @@ EXCLUDE_SYMLINKS       = NO
 # Note that the wildcards are matched against the file with absolute path, so to
 # exclude all test directories for example use the pattern */test/*
 
-EXCLUDE_PATTERNS  = */generated/*
-EXCLUDE_PATTERNS += */dep/*
+EXCLUDE_PATTERNS  = */dep/*
+EXCLUDE_PATTERNS += */test/*
+EXCLUDE_PATTERNS += *include/generated/*
+EXCLUDE_PATTERNS += *include/impl/*
 
 # The EXCLUDE_SYMBOLS tag can be used to specify one or more symbol names
 # (namespaces, classes, functions, etc.) that should be excluded from the
