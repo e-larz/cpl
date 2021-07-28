@@ -17,21 +17,15 @@
  * }
  */
 /*==============================================================================
-    INCLUDE
+    GUARD
 ==============================================================================*/
-// The API to test
-#include "test_cpl_arg.h"
-#include "test_cpl_concat.h"
-// C Standard Library
-#include <stdio.h>  // printf()
-#include <stdlib.h> // EXIT_SUCCESS
+#ifndef TEST_CPL_CONCAT_H_20210729000239
+#define TEST_CPL_CONCAT_H_20210729000239
 /*==============================================================================
-    MAIN
+    PUBLIC FUNCTION
 ==============================================================================*/
-int main(void)
-{
-    TEST_cpl_arg();
-    TEST_cpl_concat();
-    printf("TEST: OK!\n");
-    return EXIT_SUCCESS;
-}
+void TEST_cpl_concat(void);
+/*==============================================================================
+    GUARD
+==============================================================================*/
+#endif // TEST_CPL_CONCAT_H_20210729000239
