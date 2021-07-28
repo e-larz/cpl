@@ -59,5 +59,5 @@ void TEST_cpl_concat(void)
     _Static_assert(CPL_CONCAT_3(1, 0, 1) == 101, "");
     _Static_assert(CPL_CONCAT_3(-1, 0, 1) == -101, "");
     assert(strcmp(STRINGIFY(CPL_CONCAT_3(foo, UNDERSCORE, bar)), "foo_bar") == 0);
-    assert(strcmp(STRINGIFY(CPL_CONCAT_3(A, UNDERSCORE2, B)), "foo_bar") == 0);
+    assert(strcmp(STRINGIFY(CPL_CONCAT_3(A, UNDERSCORE, B)), "foo_bar") == 0);
 }
