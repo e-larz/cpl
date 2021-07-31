@@ -84,6 +84,16 @@ def cpl_arg():
     return pp
 
 ##
+# cpl_map_gen.h
+def cpl_map():
+    pp = ''
+    macro = 'CPL_MAP_FIXED_{:d}'
+    for i in range(2, macro_cnt+1):
+        pp += '#define ' + macro.format(i) + '(M, S, F, A, ...)'
+        pp += ' CPL_MAP_FIXED_1(M, S, F, A) S() ' + macro.format(i-1) + '(M, S, F, __VA_ARGS__)\n'
+    return pp
+
+##
 # cpl_number_asc_gen.h
 def cpl_number_asc():
     pp = ''
@@ -124,7 +134,7 @@ def generate_file(generator):
     f.write(guard_block_end_str.replace('{guard_name}', guard_name))
 
 def main(args):
-    generator_list = [cpl_arg, cpl_number_asc]
+    generator_list = [cpl_arg, cpl_map, cpl_map, cpl_number_asc]
     for generator in generator_list:
         generate_file(generator)
     return 0
