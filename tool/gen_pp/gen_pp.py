@@ -134,7 +134,7 @@ def generate_file(generator):
     f.write(guard_block_end_str.replace('{guard_name}', guard_name))
 
 def main(args):
-    generator_list = [cpl_arg, cpl_map, cpl_map, cpl_number_asc]
+    generator_list = [cpl_arg, cpl_map, cpl_number_asc]
     for generator in generator_list:
         generate_file(generator)
     return 0
