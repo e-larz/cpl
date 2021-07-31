@@ -66,7 +66,7 @@
  * }
  *
  * @param A : See parameter requirements in the file description
-*/
+ */
 #define CPL_BOOLEAN(A) CPL_BOOLEAN_IMPL(A)
 /**
  * Logical NOT.
@@ -87,7 +87,7 @@
  * }
  *
  * @param A : See parameter requirements in the file description
-*/
+ */
 #define CPL_NOT(A) CPL_NOT_IMPL(A)
 /**
  * Logical AND
@@ -102,7 +102,7 @@
  * }
  *
  * @param A, B : See parameter requirements in the file description
-*/
+ */
 #define CPL_AND(A, B) CPL_AND_IMPL(A, B)
 /**
  * Logical OR
@@ -117,7 +117,7 @@
  * }
  *
  * @param A, B : See parameter requirements in the file description
-*/
+ */
 #define CPL_OR(A, B) CPL_OR_IMPL(A, B)
 /**
  * Logical NAND
@@ -132,7 +132,7 @@
  * }
  *
  * @param A, B : See parameter requirements in the file description
-*/
+ */
 #define CPL_NAND(A, B) CPL_NAND_IMPL(A, B)
 /**
  * Logical NOR
@@ -147,7 +147,7 @@
  * }
  *
  * @param A, B : See parameter requirements in the file description
-*/
+ */
 #define CPL_NOR(A, B) CPL_NOR_IMPL(A, B)
 /**
  * Logical XOR
@@ -162,7 +162,7 @@
  * }
  *
  * @param A, B : See parameter requirements in the file description
-*/
+ */
 #define CPL_XOR(A, B) CPL_XOR_IMPL(A, B)
 /**
  * Logical XNOR
@@ -177,7 +177,7 @@
  * }
  *
  * @param A, B : See parameter requirements in the file description
-*/
+ */
 #define CPL_XNOR(A, B) CPL_XNOR_IMPL(A, B)
 /*==============================================================================
     GUARD
