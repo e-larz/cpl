@@ -286,7 +286,7 @@ ALIASES += "usage{1}=@par Usage^^ @cc{\1}"
 ALIASES += "licence{1}=@par Licence^^ @v{\1}"
 ALIASES += "expansion{1}=@par Expansion^^ `=>` means \"expands to\"^^ @cc{\1}"
 ALIASES += "i{1}=<em>\1</em>"
-
+ALIASES += "example{1}=@par Example^^ @cc{\1}"
 
 # Set the OPTIMIZE_OUTPUT_FOR_C tag to YES if your project consists of C sources
 # only. Doxygen will then generate output that is more tailored for C. For
