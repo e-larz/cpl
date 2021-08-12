@@ -53,7 +53,7 @@
  *   CPL_ARG_COUNT(a, b, c) => 3
  * }
  *
- * @usage{
+ * @example{
  *   int x = CPL_ARG_COUNT(a, b, c); // x = 3
  * }
  */

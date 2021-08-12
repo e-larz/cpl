@@ -15,6 +15,9 @@
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  * }
+ *
+ * @brief
+ * Provide macros allowing direct and delayed concatenation of their arguments.
  */
 /*==============================================================================
     GUARD

@@ -15,6 +15,9 @@
  * OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
  * PERFORMANCE OF THIS SOFTWARE.
  * }
+ *
+ * @brief
+ * Provide macro functions expanding to various ASCII characters.
  */
 /*==============================================================================
     GUARD
