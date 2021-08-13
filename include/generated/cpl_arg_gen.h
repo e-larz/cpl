@@ -1,6 +1,6 @@
-// SPDX-License-Identifier: 0BSD// SPDX-License-Identifier: 0BSD
+// SPDX-License-Identifier: 0BSD
 /*
- * @licence{
+ * @license{
  * BSD Zero Clause License
  *
  * Permission to use, copy, modify, and/or distribute this software for any

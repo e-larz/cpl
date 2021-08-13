@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: 0BSD
 ##
 # @file
-# @licence{
+# @license{
 # BSD Zero Clause License
 #
 # Permission to use, copy, modify, and/or distribute this software for any
@@ -17,10 +17,10 @@
 # PERFORMANCE OF THIS SOFTWARE.
 # }
 
-licence_str = """\
-// SPDX-License-Identifier: 0BSD// SPDX-License-Identifier: 0BSD
+license_str = """\
+// SPDX-License-Identifier: 0BSD
 /*
- * @licence{
+ * @license{
  * BSD Zero Clause License
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -128,7 +128,7 @@ def generate_file(generator):
     file_name = generator.__name__ + '_gen.h'
     guard_name = file_name.replace('.', '_').upper()
     f = open(output_path + file_name, 'w')
-    f.write(licence_str)
+    f.write(license_str)
     f.write(guard_block_start_str.replace('{guard_name}', guard_name))
     f.write(generator())
     f.write(guard_block_end_str.replace('{guard_name}', guard_name))
