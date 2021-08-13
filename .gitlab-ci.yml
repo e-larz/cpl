@@ -1,0 +1,15 @@
+image: $CI_IMAGE_GCC
+
+build:
+  stage: build
+  script:
+    - make all CC=gcc
+  artifacts:
+    paths:
+      - test/build/
+
+test:
+  stage: test
+  needs: ["build"]
+  script:
+    - make check
