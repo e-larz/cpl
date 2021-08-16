@@ -116,7 +116,6 @@ $(TEST_TARGET):: test
 test::
 	$(MAKE) -C $(TEST_PATH) all CC=$(CC) BUILD_MODE=$(BUILD_MODE) \
 	MAKEFILE_PATH=../$(MAKEFILE_PATH)
-endif
 
 # Run tests(they must be build first)
 .PHONY: check
@@ -125,9 +124,11 @@ check::
 	MAKEFILE_PATH=../$(MAKEFILE_PATH)
 
 # Remove test build files
+CLEAN_DEPS := clean_test
 .PHONY: clean_test
 clean_test::
 	$(MAKE) -C $(TEST_PATH) clean MAKEFILE_PATH=../$(MAKEFILE_PATH)
+endif
 ################################################################################
 # CODE ANALYSIS/COVERAGE - DOC
 ################################################################################
@@ -156,12 +157,9 @@ doc:: | $(DOXYGEN_PATH)
 # CLEAN/REBUILD/INSTALL/UNINSTALL
 ################################################################################
 # Remove build files
-ifneq ($(TEST_TARGET),empty_target)
-CLEAN_TEST := clean_test
-endif
 CLEAN_CMD = rm -rf $(BUILD_ROOT_PATH)
 .PHONY: clean
-clean:: $(CLEAN_TEST)
+clean:: $(CLEAN_DEPS)
 	$(CLEAN_CMD)
 
 # Remove existing build files and build again
