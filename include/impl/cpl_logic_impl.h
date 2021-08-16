@@ -25,7 +25,7 @@
     PREPROCESSOR
 ==============================================================================*/
 /*
- * These four small macros are redefined here(with diffent names) to prevent
+ * These four small macros are redefined here(with different names) to prevent
  * the inclusion of a lot of unnecessary things comming with other includes.
  */
 #define CPL_PRIV_LOGIC_DEFER(M, ...)      M(__VA_ARGS__)
@@ -88,7 +88,7 @@
 #define CPL_PRIV_AND_11 1
 /**
  * This time, contrary to `CPL_AND_IMPL()`, all concatenations involving a
- * parameter which is neither `0`, `1` nor the empty token evalutes to `1`.
+ * parameter which is neither `0`, `1` nor the empty token evalute to `1`.
  * Therefore the method used for `CPL_BOOLEAN_IMPL()` can be used here as well.
  *
  * Although `CPL_OR_IMPL()` could be defined in the same way as `CPL_AND_IMPL()`

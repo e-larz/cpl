@@ -1,4 +1,4 @@
-# Ensure new text file committed will have their line endings set to `LF`.
+# Ensure new text files committed will have their line endings set to `LF`.
 * text=auto
 
 # Ensure headers are recognized as C files instead of C++.
