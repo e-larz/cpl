@@ -1,6 +1,8 @@
-image: $CI_IMAGE_GCC
+stages:
+  - build
+  - test
 
-build:
+.template-build-debian-gcc:
   stage: build
   script:
     - make all CC=gcc
@@ -8,8 +10,43 @@ build:
     paths:
       - test/build/
 
-test:
+.template-test-debian-gcc:
   stage: test
-  needs: ["build"]
   script:
     - make check
+
+build-debian-gcc-7:
+  extends: .template-build-debian-gcc
+  image: $CI_IMAGE_DEBIAN_GCC-7:latest
+
+build-debian-gcc-8:
+  extends: .template-build-debian-gcc
+  image: $CI_IMAGE_DEBIAN_GCC-8:latest
+
+build-debian-gcc-9:
+  extends: .template-build-debian-gcc
+  image: $CI_IMAGE_DEBIAN_GCC-9:latest
+
+build-debian-gcc-10:
+  extends: .template-build-debian-gcc
+  image: $CI_IMAGE_DEBIAN_GCC-10:latest
+
+test-debian-gcc-7:
+  extends: .template-test-debian-gcc
+  image: $CI_IMAGE_DEBIAN_GCC-7:latest
+  needs: ["build-debian-gcc-7"]
+
+test-debian-gcc-8:
+  extends: .template-test-debian-gcc
+  image: $CI_IMAGE_DEBIAN_GCC-8:latest
+  needs: ["build-debian-gcc-8"]
+
+test-debian-gcc-9:
+  extends: .template-test-debian-gcc
+  image: $CI_IMAGE_DEBIAN_GCC-9:latest
+  needs: ["build-debian-gcc-9"]
+
+test-debian-gcc-10:
+  extends: .template-test-debian-gcc
+  image: $CI_IMAGE_DEBIAN_GCC-10:latest
+  needs: ["build-debian-gcc-10"]
