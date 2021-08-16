@@ -42,7 +42,9 @@ CC_WARNING += -Wc11-c2x-compat
 endif
 # Pointer is cast to a type with stricter alignment
 # Warn even for platform allowing missaligned memory access(x86)
+ifeq ($(CC),$(filter $(CC),gcc-8 gcc-9 gcc-10 gcc-11))
 CC_WARNING += -Wcast-align=strict
+endif
 # Pointer is cast to remove a type qualifier
 CC_WARNING += -Wcast-qual
 # Implicit cast that may change the value
@@ -149,7 +151,11 @@ CC_WARNING += -D_FORTIFY_SOURCE=2
 CC_ERROR := -pedantic-errors
 # Treat all warnings as errors
 CC_ERROR += #-Werror
+ifeq ($(CC),$(filter $(CC),gcc-8 gcc-9 gcc-10 gcc-11))
 CC_C_VERSION := -std=c17
+else
+CC_V_VERSION := -std=c11
+endif
 # Default build mode is debug
 CC_DEBUG := -g3
 CC_OPTIMIZATION := -O1
