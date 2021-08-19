@@ -27,6 +27,23 @@
 /*==============================================================================
     PREPROCESSOR
 ==============================================================================*/
+/**
+ * Delay the call to \p{M()}, allowing \p{...} to be expanded before being
+ * passed as arguments to \p{M()}.
+ *
+ * @param M   : Macro to call
+ * @param ... : Comma separated list of arguments to be passed to \p{M()}
+ *
+ * @expansion{
+ *  #define A foo, bar
+ *  #define B baz
+ *  CPL_DEFER(M, foo, bar) => M(foo, bar)
+ *  CPL_DEFER(M, A, B) => M(foo, bar, baz)
+ *  #define M(...) __VA_ARGS__
+ *  CPL_DEFER(M, foo, bar) => foo, bar
+ *  CPL_DEFER(M, A, B) => foo, bar, baz
+ * }
+ */
 #define CPL_DEFER(M, ...) M(__VA_ARGS__)
 /*==============================================================================
     GUARD
