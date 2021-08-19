@@ -36,3 +36,15 @@ test-debian-gcc-9:
 test-debian-gcc-10:
   extends: .template-test-debian-gcc
   needs: ["build-debian-gcc: [$CI_IMAGE_DEBIAN_GCC-10:latest]"]
+
+pages:
+  stage: deploy
+  image: $CI_GROUP_REGISTRY/doc:latest
+  script:
+    - make doc
+    - mv doc/doxygen/html public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
