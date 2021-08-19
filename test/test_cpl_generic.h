@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: 0BSD
 /*!
  * @file
- * @license{
+ * @licence{
  * BSD Zero Clause License
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -17,32 +17,15 @@
  * }
  */
 /*==============================================================================
-    INCLUDE
+    GUARD
 ==============================================================================*/
-// The API to test
-#include "test_cpl_arg.h"
-#include "test_cpl_concat.h"
-#include "test_cpl_generic.h"
-#include "test_cpl_logic.h"
-#include "test_cpl_map.h"
-#include "test_cpl_type.h"
-#include "test_cpl_util.h"
-// C Standard Library
-#include <stdio.h>  // printf()
-#include <stdlib.h> // EXIT_SUCCESS
+#ifndef TEST_CPL_GENERIC_H_20210820002744
+#define TEST_CPL_GENERIC_H_20210820002744
 /*==============================================================================
-    MAIN
+    PUBLIC FUNCTION
 ==============================================================================*/
-int main(void)
-{
-    TEST_cpl_arg();
-    TEST_cpl_concat();
-    TEST_cpl_generic();
-    TEST_cpl_logic();
-    TEST_cpl_map();
-    TEST_cpl_type();
-    TEST_cpl_util();
-
-    printf("TEST: OK!\n");
-    return EXIT_SUCCESS;
-}
+void TEST_cpl_generic(void);
+/*==============================================================================
+    GUARD
+==============================================================================*/
+#endif // TEST_CPL_GENERIC_H_20210820002744

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: 0BSD
 /*!
  * @file
- * @license{
+ * @licence{
  * BSD Zero Clause License
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -19,30 +19,34 @@
 /*==============================================================================
     INCLUDE
 ==============================================================================*/
-// The API to test
-#include "test_cpl_arg.h"
-#include "test_cpl_concat.h"
+// Own header
 #include "test_cpl_generic.h"
-#include "test_cpl_logic.h"
-#include "test_cpl_map.h"
-#include "test_cpl_type.h"
-#include "test_cpl_util.h"
+// The API to test
+#include "cpl_generic.h"
 // C Standard Library
-#include <stdio.h>  // printf()
-#include <stdlib.h> // EXIT_SUCCESS
+#include <assert.h>
+#include <string.h> // strcmp()
+// Misc
+#include "test_util.h"
 /*==============================================================================
-    MAIN
+    FUNCTION DECLARATION
 ==============================================================================*/
-int main(void)
+void TEST_CPL_GENERIC_FUNC(void);
+/*==============================================================================
+    FUNCTION DEFINITION
+==============================================================================*/
+/*------------------------------------------------------------------------------
+    TEST_cpl_generic()
+------------------------------------------------------------------------------*/
+void TEST_cpl_generic(void)
 {
-    TEST_cpl_arg();
-    TEST_cpl_concat();
-    TEST_cpl_generic();
-    TEST_cpl_logic();
-    TEST_cpl_map();
-    TEST_cpl_type();
-    TEST_cpl_util();
-
-    printf("TEST: OK!\n");
-    return EXIT_SUCCESS;
+    TEST_CPL_GENERIC_FUNC();
+}
+/*------------------------------------------------------------------------------
+    TEST_CPL_GENERIC_FUNC()
+------------------------------------------------------------------------------*/
+void TEST_CPL_GENERIC_FUNC(void)
+{
+    assert(strcmp(STRINGIFY(CPL_GENERIC_FUNC(x, 0, foo, bar, char, int)),
+        "_Generic((x), default: 0, foo_char : foo_char_bar , foo_int : foo_int_bar)") == 0);
 }
