@@ -27,9 +27,51 @@
 /*==============================================================================
     PREPROCESSOR
 ==============================================================================*/
-#define CPL_CONCAT_2(...)         CPL_CONCAT_RAW_2(__VA_ARGS__)
-#define CPL_CONCAT_RAW_2(A, ...)  A##__VA_ARGS__
-#define CPL_CONCAT_3(A, B, C)     CPL_CONCAT_RAW_3(A, B, C)
+/**
+ * Concatenates two arguments after expanding them.
+ *
+ * @expansion{
+ *  #define A foo
+ *  #define B bar
+ *  CPL_CONCAT_2(foo, bar) => foobar
+ *  CPL_CONCAT_2(A, B)     => foobar
+ * }
+ */
+#define CPL_CONCAT_2(A, B) CPL_CONCAT_RAW_2(A, B)
+/**
+ * Concatenates two arguments without expanding them.
+ *
+ * @expansion{
+ *  #define A foo
+ *  #define B bar
+ *  CPL_CONCAT_RAW_2(foo, bar) => foobar
+ *  CPL_CONCAT_RAW_2(A, B)     => AB
+ * }
+ */
+#define CPL_CONCAT_RAW_2(A, B) A##B
+/**
+ * Concatenates three arguments after expanding them.
+ *
+ * @expansion{
+ *  #define A foo
+ *  #define B bar
+ *  #define UNDERSCORE _
+ *  CPL_CONCAT_3(foo, UNDERSCORE, bar) => foo_bar
+ *  CPL_CONCAT_3(A, UNDERSCORE, B)     => foo_bar
+ * }
+ */
+#define CPL_CONCAT_3(A, B, C) CPL_CONCAT_RAW_3(A, B, C)
+/**
+ * Concatenates three arguments without expanding them.
+ *
+ * @expansion{
+ *  #define A foo
+ *  #define B bar
+ *  #define UNDERSCORE _
+ *  CPL_CONCAT_RAW_3(foo, UNDERSCORE, bar) => fooUNDERSCOREbar
+ *  CPL_CONCAT_RAW_3(A, UNDERSCORE, B)     => AUNDERSCOREB
+ * }
+ */
 #define CPL_CONCAT_RAW_3(A, B, C) A##B##C
 /*==============================================================================
     GUARD
