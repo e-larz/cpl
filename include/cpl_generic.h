@@ -17,7 +17,7 @@
  * }
  *
  * @brief
- * Provide macros to easily create  `_Generic()` expressions(aka
+ * Provide macros to easily create `_Generic()` expressions(aka
  * @e generic-selection).
  *
  * @see
@@ -37,19 +37,19 @@
     PREPROCESSOR
 ==============================================================================*/
 /**
- * Expand to a @e generic-selection where each @e generic-association is
- * constructed as `PREFIX_type-name : PREFIX_type-name_FUNC`.
+ * Expands to a `_Generic()` expression where the associations are constructed
+ * according to a determined pattern.
  *
- * @v{
- * generic-selection:
- *     _Generic ( assignment-expression, generic-assoc-list )
- * }
+ * The default association has to be set manually, the others are automatically
+ * constructed as follows:
+ * - Type      : `<prefix>_<type>`.
+ * - Expression: `<prefix>_<type>_<func>`.
  *
- * @param CTR_EXPR : Controlling @e assignment-expression
- * @param DEF_EXPR : Default @e assignment-expression
- * @param PREFIX   : Prefix added before a @e type-name
- * @param FUNC     : Function name added after a @e type-name
- * @param ...      : Comma separated list of @e type-name
+ * @param CTR_EXPR : Controlling expression
+ * @param DEF_EXPR : Default expression
+ * @param PREFIX   : `<prefix>` (single word)
+ * @param FUNC     : `<func>` (single word)
+ * @param ...      : Comma separated list of `<type>` (each a single word)
  *
  * @expansion{
  * CPL_GENERIC_FUNC(x, 0, foo, bar, char, int) =>
@@ -63,7 +63,6 @@
  * @example{
  * int x = CPL_GENERIC_FUNC(x, 0, foo, bar, char, int)(a, b); // x = foo_int_bar(a, b)
  * }
- *
  */
 #define CPL_GENERIC_FUNC(CTR_EXPR, DEF_EXPR, PREFIX, FUNC, ...)                \
     CPL_GENERIC_FUNC_IMPL(CTR_EXPR, DEF_EXPR, PREFIX, FUNC, __VA_ARGS__)
