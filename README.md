@@ -2,6 +2,7 @@
 
 [![pipeline status](https://gitlab.com/callback/cpl/badges/master/pipeline.svg)](https://gitlab.com/callback/cpl/-/commits/master)
 [![license](https://img.shields.io/badge/license-0BSD-blue)](LICENSE)
+[![doxygen](https://img.shields.io/badge/doc-doxygen-blue)](https://callback.gitlab.io/cpl)
 
 A C11 preprocessor library providing useful macros.
 
