@@ -26,7 +26,6 @@
 // C Standard Library
 #include <assert.h>
 #include <string.h> // strcmp()
-#include <stdio.h>
 // Misc
 #include "test_util.h"
 /*==============================================================================
