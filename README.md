@@ -14,6 +14,7 @@ A C11 preprocessor library providing useful macros.
   - [Usage](#usage)
 - [Versioning](#versioning)
 - [Changelog](#changelog)
+- [Contributing](#contributing)
 - [Interesting links](#interesting-links)
 - [License](#license)
 
@@ -74,6 +75,10 @@ This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ## Changelog
 
 See the [CHANGELOG.md](CHANGELOG.md) file.
+
+## Contributing
+
+See the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## Interesting links
 
