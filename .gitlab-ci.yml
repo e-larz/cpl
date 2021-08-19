@@ -1,6 +1,7 @@
 stages:
   - build
   - test
+  - deploy
 
 .template-test-debian-gcc:
   stage: test
