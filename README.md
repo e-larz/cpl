@@ -13,6 +13,7 @@ A C11 preprocessor library providing useful macros.
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Usage](#usage)
+- [Documentation](#documentation)
 - [Versioning](#versioning)
 - [Changelog](#changelog)
 - [Contributing](#contributing)
@@ -109,6 +110,10 @@ Include the main header:
 ```c
 #include <cpl/cpl.h>
 ```
+
+## Documentation
+
+Doxygen documentation is available here: <https://callback.gitlab.io/cpl>
 
 ## Versioning
 
