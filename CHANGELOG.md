@@ -13,6 +13,10 @@ which says in its summary:
 
 ## [Unreleased]
 
+## [0.1.0]
+
+(2021-06-06)
+
 ### Added
 
 - `cpl_arg.h`:
