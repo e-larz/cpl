@@ -8,6 +8,7 @@ A C11 preprocessor library providing useful macros.
 
 ## Table of Contents
 
+- [Quick overview](#quick-overview)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -17,6 +18,47 @@ A C11 preprocessor library providing useful macros.
 - [Contributing](#contributing)
 - [Interesting links](#interesting-links)
 - [License](#license)
+
+## Quick overview
+
+```c
+#include <cpl/cpl.h>
+
+int main(void)
+{
+    // Count number of arguments
+    int cnt = CPL_ARG_COUNT(a, b, c, d, e); // cnt = 5
+
+    // Map list of arguments to a function
+    CPL_MAP(puts, CPL_SEMICOLON, "foo", "bar", "baz");
+    // puts("foo");
+    // puts("bar");
+    // puts("baz");
+
+    // Map list of arguments to a function taking a fixed first argument
+    CPL_MAP_FIXED(printf, CPL_SEMICOLON, ("%s\n"), "foo", "bar", "baz");
+    // printf("%s\n", "foo");
+    // printf("%s\n", "bar");
+    // printf("%s\n", "baz");
+
+    // Boolean evaluation
+    #define HAS_A 1
+    #define HAS_B 1
+    #if CPL_AND(HAS_A, HAS_B)
+    // ...
+    #endif
+
+    // _Generic() selection
+    int x = CPL_GENERIC_FUNC(x, 0, foo, bar, char, int)(a, b);
+    /* x = _Generic((x),
+              default : 0,
+              foo_char: foo_char_bar,
+              foo_int : foo_int_bar
+          )(a, b);
+        => x = foo_int_bar(a, b);
+    */
+}
+```
 
 ## Getting Started
 
