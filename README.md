@@ -69,7 +69,7 @@ needed to use it in your project and to compile the tests.
 
 ### Installation
 
-[Download](https://gitlab.com/callback/cpl/-/archive/develop/cpl-develop.zip) or
+[Download](https://gitlab.com/callback/cpl/-/archive/master/cpl-master.zip) or
 clone the repository:
 
 ```
