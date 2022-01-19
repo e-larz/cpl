@@ -1,8 +1,9 @@
+# SPDX-License-Identifier: 0BSD
 ################################################################################
 # CPL
 ################################################################################
 MAKEFILE_PATH := makefiles
-include $(MAKEFILE_PATH)/global.mk
+include $(MAKEFILE_PATH)/config.mk
 PROJECT := cpl
 PROJECT_TYPE := header
 ################################################################################

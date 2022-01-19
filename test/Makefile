@@ -1,7 +1,8 @@
+# SPDX-License-Identifier: 0BSD
 ################################################################################
 # TEST
 ################################################################################
-include $(MAKEFILE_PATH)/global.mk
+include $(MAKEFILE_PATH)/config.mk
 PROJECT  := test
 SRC_PATH := .
 INC_PATH := ../$(INC_PATH)
